@@ -1,0 +1,128 @@
+﻿@model List<UI.Web.ViewModel.VMPerson>
+
+<h2>Rekordy tebeli Person</h2>
+
+<table class="table" border="0">
+    <thead>
+        <tr>
+            <th>
+                L.p.
+            </th>
+            <th>
+                Imie
+            </th>
+            <th>
+                Nazwisko
+            </th>
+            <th>
+                Data przystąpienia
+            </th>
+            <th>
+                Data przyjęcia
+            </th>
+            <th>
+                Wihajster
+            </th>
+            <th>
+                Edycja
+            </th>
+            <th>
+                Kasowanie
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            if (p.id % 2 == 0)
+            {
+                <tr style="background: #d4d4d4">
+                    <td>
+                        @p.id
+                    </td>
+                    <td>
+                        @p.FirstName
+                    </td>
+                    <td>
+                        @p.LastName
+                    </td>
+                    @if (p.EnrollmentDate != null)
+                    {
+                        <td>
+                            @p.EnrollmentDate
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            N/A
+                        </td>
+                    }
+                    @if (p.HireDate != null)
+                    {
+                        <td>
+                            @p.HireDate
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            N/A
+                        </td>
+                    }
+                    <td>
+                        @p.Discrimination
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edycja", "EditPerson", new { id = @p.id })
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr style="background: #e9e9e9">
+                    <td>
+                        @p.id
+                    </td>
+                    <td>
+                        @p.FirstName
+                    </td>
+                    <td>
+                        @p.LastName
+                    </td>
+                    @if (p.EnrollmentDate != null)
+                    {
+                        <td>
+                            @p.EnrollmentDate
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            N/A
+                        </td>
+                    }
+                    @if (p.HireDate != null)
+                    {
+                        <td>
+                            @p.HireDate
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            N/A
+                        </td>
+                    }
+                    <td>
+                        @p.Discrimination
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edycja", "EditPerson", new { id = @p.id })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+</div>

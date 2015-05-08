@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zad_3___bis.Model;
+using NHibernate.Linq;
 
 namespace zad_3___bis
 {
@@ -11,7 +12,12 @@ namespace zad_3___bis
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(InsertData());
+            string operation_status = "";
+            operation_status += "Insert: " + InsertData();
+            operation_status += "\nSelect: " + SelectInstructors();
+            operation_status += "\nSelect: " + SelectStudents();
+
+            Console.WriteLine(operation_status);
             Console.ReadLine();
         }
 
@@ -57,6 +63,22 @@ namespace zad_3___bis
                             Credits = 28
                         };
                         session.Save(c2);
+
+                        var c3 = new Course
+                        {
+                            Title = "Nauka latania Latawcem",
+                            DepartmentID = d1,
+                            Credits = 1
+                        };
+                        session.Save(c3);
+
+                        var c4 = new Course
+                        {
+                            Title = "Kurs wypełniania papierów unijnych",
+                            DepartmentID = d2,
+                            Credits = 777
+                        };
+                        session.Save(c4);
 
                         var onS1 = new OnsiteCourse
                         {
@@ -148,7 +170,7 @@ namespace zad_3___bis
                         var o1 = new OfficeAssignment
                         {
                             Location = "KTW",
-                            Timestamp = new TimeSpan(1, 00, 00, 00),
+                            Timestamp = new TimeSpan(0, 03, 00, 00),
                             Person = t1
                         };
                         session.Save(o1);
@@ -156,13 +178,13 @@ namespace zad_3___bis
                         var o2 = new OfficeAssignment
                         {
                             Location = "BB",
-                            Timestamp = new TimeSpan(2, 30, 00, 00),
+                            Timestamp = new TimeSpan(0, 01, 30, 00),
                             Person = t2
                         };
                         session.Save(o2);
 
                         transaction.Commit();
-                        result = "\n\nOK";
+                        result = "OK";
                     }
                     catch (Exception ex)
                     {
@@ -170,7 +192,55 @@ namespace zad_3___bis
                     }
                 }
                 return result;
-            }            
+            }
+        }
+
+        private static string SelectInstructors()
+        {
+            string result = "";
+
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                //zła strona
+                //Person p1 = null;
+                //OfficeAssignment o1 = null;
+                //var q = session.QueryOver<Person>(() => p1)
+                //    .JoinAlias(() => p1.OfficeAssignment, () => o1)
+                //    .List<Person>();
+
+                var q = from p in session.Query<Person>()
+                        join o in session.Query<OfficeAssignment>() on p.PersonID equals o.InstructorID
+                        select p;
+
+                var query = q.ToList();
+
+                Console.Clear();
+                int i = 1;
+                foreach (var instructor in query)
+                {
+                    result += "\n\nInstruktor " + i + "\nImie: " + instructor.FirstName + "\nNazwisko: " + instructor.LastName + "\nLokalizacja: " + instructor.OfficeAssignment.Location;
+                    i++;
+                }
+
+                result += "\n\nSelect Instructor - OK";
+
+
+                return result;
+            }
+        }
+
+        private static string SelectStudents()
+        {
+            string result = "";
+
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+
+                    return result;
+                }
+            }
         }
     }
 }
