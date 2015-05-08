@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zad_2_-_Fluent_NHibernate", "zad_2\zad_2_-_Fluent_NHibernate.csproj", "{74CE30A6-169D-489B-AAC6-91063DBAA2E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zad_3_-_CRUD_NHibernate", "zad_3_-_CRUD_NHibernate\zad_3_-_CRUD_NHibernate.csproj", "{E4CC89C0-C71F-4293-8741-AE6614FED36C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zad_3_-_bis", "zad_3_-_bis\zad_3_-_bis.csproj", "{E114FCE9-2F24-4291-A0F0-969909DECBD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fluent NHibernate", "Fluent NHibernate", "{8D1CBF30-1E9B-45AD-941E-18AB1116D557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManyToOne", "ManyToOne\ManyToOne.csproj", "{7CA567D9-F248-4D83-8BBF-3CEFEF9B4148}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneToOne", "OneToOne\OneToOne.csproj", "{7CB7A29F-4551-4051-8DB9-7D5FBC242FE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74CE30A6-169D-489B-AAC6-91063DBAA2E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74CE30A6-169D-489B-AAC6-91063DBAA2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74CE30A6-169D-489B-AAC6-91063DBAA2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74CE30A6-169D-489B-AAC6-91063DBAA2E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4CC89C0-C71F-4293-8741-AE6614FED36C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4CC89C0-C71F-4293-8741-AE6614FED36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4CC89C0-C71F-4293-8741-AE6614FED36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4CC89C0-C71F-4293-8741-AE6614FED36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E114FCE9-2F24-4291-A0F0-969909DECBD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E114FCE9-2F24-4291-A0F0-969909DECBD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E114FCE9-2F24-4291-A0F0-969909DECBD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E114FCE9-2F24-4291-A0F0-969909DECBD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CA567D9-F248-4D83-8BBF-3CEFEF9B4148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA567D9-F248-4D83-8BBF-3CEFEF9B4148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA567D9-F248-4D83-8BBF-3CEFEF9B4148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA567D9-F248-4D83-8BBF-3CEFEF9B4148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CB7A29F-4551-4051-8DB9-7D5FBC242FE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB7A29F-4551-4051-8DB9-7D5FBC242FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB7A29F-4551-4051-8DB9-7D5FBC242FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CB7A29F-4551-4051-8DB9-7D5FBC242FE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7CA567D9-F248-4D83-8BBF-3CEFEF9B4148} = {8D1CBF30-1E9B-45AD-941E-18AB1116D557}
+		{7CB7A29F-4551-4051-8DB9-7D5FBC242FE5} = {8D1CBF30-1E9B-45AD-941E-18AB1116D557}
+	EndGlobalSection
+EndGlobal
