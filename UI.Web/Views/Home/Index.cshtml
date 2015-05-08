@@ -1,6 +1,10 @@
 ﻿@model List<UI.Web.ViewModel.VMPerson>
 
-<h2>Rekordy tebeli Person</h2>
+<h2>
+    Rekordy tebeli Person
+    <input type="button" value="+ Dodaj nową osobę" class="btn btn-success pull-right" onclick="location.href='@Url.Action("AddPerson", "Home")'" />
+</h2>
+
 
 <table class="table" border="0">
     <thead>
@@ -76,6 +80,12 @@
                     <td>
                         @Html.ActionLink("Edycja", "EditPerson", new { id = @p.id })
                     </td>
+                    <td>
+                        @{
+                string stringMsg = "return confirm('Czy aby napewno skasować: " + p.FirstName + " " + p.LastName + " z bazy?');";
+                        }
+                        @Html.ActionLink("Usuń", "DelPerson", new { id = @p.id }, new { onclick = stringMsg })
+                    </td>
                 </tr>
             }
             else
@@ -120,9 +130,14 @@
                     <td>
                         @Html.ActionLink("Edycja", "EditPerson", new { id = @p.id })
                     </td>
+                    <td>
+                        @{
+                string stringMsg = "return confirm('Czy aby napewno skasować: " + p.FirstName + " " + p.LastName + " z bazy?');";
+                        }
+                        @Html.ActionLink("Usuń", "DelPerson", new { id = @p.id }, new { onclick = stringMsg })
+                    </td>
                 </tr>
             }
         }
     </tbody>
 </table>
-</div>

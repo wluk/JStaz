@@ -3,7 +3,7 @@
 <h2>Dodanie nowej osoby</h2>
 <div class="row">
     <div class="col-md-8">
-        @using (Html.BeginForm("EditPerson", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        @using (Html.BeginForm("AddPerson", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
             @*@Html.AntiForgeryToken()*@
             <h4>Formularz dodawanai nowej osoby:</h4>
