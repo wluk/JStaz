@@ -33,12 +33,10 @@ namespace zad_3___bis.Mapping
                 .Generated.Never();
 
             Map(x => x.HireDate)
-                .CustomSqlType("datetime2")
-                .Not.Nullable();
+                .CustomSqlType("datetime2");
 
             Map(x => x.EnrollmentDate)
-                .CustomSqlType("datetime2")
-                .Not.Nullable();
+                .CustomSqlType("datetime2");
 
             Map(x => x.Discrimination);
 

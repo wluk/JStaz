@@ -11,8 +11,8 @@ namespace zad_3___bis.Model
         public virtual int PersonID { get; set; }
         public virtual string LastName { get; set; }
         public virtual string FirstName { get; set; }
-        public virtual DateTime HireDate { get; set; }
-        public virtual DateTime EnrollmentDate { get; set; }
+        public virtual DateTime? HireDate { get; set; }
+        public virtual DateTime? EnrollmentDate { get; set; }
         public virtual bool Discrimination { get; set; }
 
         public virtual OfficeAssignment OfficeAssignment { get; set; }

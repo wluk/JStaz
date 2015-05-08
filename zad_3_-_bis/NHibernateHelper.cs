@@ -41,7 +41,7 @@ namespace zad_3___bis
                         .Create(true, true))
                         .BuildSessionFactory();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Console.WriteLine("Błąd z poziomu: InitializeSessionFactory");
                 Console.ReadLine();

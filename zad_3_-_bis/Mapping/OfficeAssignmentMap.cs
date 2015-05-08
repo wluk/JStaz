@@ -28,8 +28,7 @@ namespace zad_3___bis.Mapping
                 .Generated.Never();
 
             Map(x => x.Timestamp)
-                .CustomSqlType("datetime2")
-                .Not.Nullable();
+                .CustomType("TimeAsTimeSpan");
 
             HasOne(x => x.Person).Constrained();
         }
