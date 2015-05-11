@@ -11,12 +11,14 @@ namespace zad_3___bis.Mapping
             LazyLoad();
 
             Id(x => x.PersonID)
-              .Column("PersonID")
-              .CustomType("Int32")
-              .Access.Property()
-              .CustomSqlType("INTEGER")
-              .Not.Nullable()
-              .GeneratedBy.Identity();
+                .GeneratedBy
+                .Guid();
+            //.Column("PersonID")
+            //.CustomType("Int32")
+            //.Access.Property()
+            //.CustomSqlType("INTEGER")
+            //.Not.Nullable()
+            //.GeneratedBy.Identity();
 
             Map(x => x.LastName)
               .CustomType("AnsiString")
@@ -40,8 +42,23 @@ namespace zad_3___bis.Mapping
 
             Map(x => x.Discrimination);
 
-            HasOne(x => x.OfficeAssignment).Cascade.All();
-            HasManyToMany(x => x.Courses).Cascade.All().Table("CourseInstructor");
+
+
+            HasManyToMany(x => x.Courses)
+                .Cascade.All()
+                .Table("CourseInstructor");
+
+            HasOne(x => x.OfficeAssignment)
+                .Cascade.All();
+
+            //.Class<OfficeAssignment>()
+            //.Access.Property()
+            //.Cascade.None();
+            //HasOne(x => x.OfficeAssignment)
+            //    .Class<OfficeAssignment>()
+            //    .Access.Property()
+            //    .Cascade.None()
+            //    .Constrained();
 
         }
     }

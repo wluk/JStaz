@@ -43,7 +43,7 @@ namespace zad_3___bis.Mapping
                 .Access.Property()
                 .Generated.Never();
 
-            HasMany(x => x.Courses).KeyColumn("DeptId").Inverse().Cascade.All();
+            HasMany(x => x.Coursession).KeyColumn("DeptId").Inverse().Cascade.All();
         }
     }
 }

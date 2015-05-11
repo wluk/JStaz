@@ -32,11 +32,24 @@ namespace zad_3___bis.Mapping
                 .Generated.Never()
                 .CustomSqlType("INTEGER");
 
-            References(x => x.DepartmentID, "DeptId").Cascade.None();
-            HasOne(x => x.OnlineCourse).Cascade.All();
-            HasOne(x => x.OnsiteCourse).Cascade.All();
-            HasMany(x => x.StudentGrades).KeyColumn("CourseID").Inverse().Cascade.All();
-            HasManyToMany(x => x.Persons).Cascade.All().Inverse().Table("CourseInstructor");
+            References(x => x.DepartmentID, "DeptId")
+                .Cascade.None();
+
+            HasOne(x => x.OnlineCourse)
+                .Cascade.All();
+
+            HasOne(x => x.OnsiteCourse)
+                .Cascade.All();
+
+            HasMany(x => x.StudentGrades)
+                .KeyColumn("CourseID")
+                .Inverse()
+                .Cascade.All();
+            
+            HasManyToMany(x => x.Persons)
+                .Cascade.All()
+                .Inverse()
+                .Table("CourseInstructor");
         }
     }
 }

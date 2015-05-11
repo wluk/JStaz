@@ -17,26 +17,27 @@ namespace OneToOne
                 {
                     try
                     {
-                        var d = new Dept
-                        {
-                            DeptLocation = "BB",
-                            DeptName = "Biuro Bielsko",
-                            Employee = new Employee
-                                {
-                                    EmpAge = 8,
-                                    EmpName = "wilu",                                    
-                                }
-                            
-                        };
+                        //var d = new Dept
+                        //{
+                        //    DeptLocation = "BB",
+                        //    DeptName = "Biuro Bielsko",
+                        //    //,
+                        //    //Employee = new Employee
+                        //    //    {
+                        //    //        EmpAge = 8,
+                        //    //       EmpName = "wilu",                                    
+                        //    //    }       
+                        //    Employee = new Employee()
+                        //};
 
-                        session.Save(d);
+                        //session.Save(d);
 
                         transaction.Commit();
                         Console.WriteLine("OK");
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("Błąd z poziomu: programu");
+                        Console.WriteLine("Błąd z poziomu: programu\n" + ex);
                     }
                     Console.ReadLine();
                 }

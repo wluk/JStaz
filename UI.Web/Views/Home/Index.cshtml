@@ -25,7 +25,13 @@
                 Data przyjęcia
             </th>
             <th>
-                Wihajster
+                Discriminator
+            </th>
+            <th>
+                Liczba Szkoleń
+            </th>
+            <th>
+                Liczba Kurów
             </th>
             <th>
                 Edycja
@@ -77,6 +83,30 @@
                     <td>
                         @p.Discrimination
                     </td>
+                    @if (p.CourseCount != 0)
+                    {
+                        <td>
+                            @p.CourseCount
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            N/A
+                        </td>
+                    }
+                    @if (p.GradeCount != 0)
+                    {
+                        <td>
+                            @p.GradeCount
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            N/A
+                        </td>
+                    }
                     <td>
                         @Html.ActionLink("Edycja", "EditPerson", new { id = @p.id })
                     </td>
@@ -127,6 +157,30 @@
                     <td>
                         @p.Discrimination
                     </td>
+                    @if (p.CourseCount != 0)
+                    {
+                        <td>
+                            @p.CourseCount
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            N/A
+                        </td>
+                    }
+                    @if (p.GradeCount != 0)
+                    {
+                        <td>
+                            @p.GradeCount
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            N/A
+                        </td>
+                    }
                     <td>
                         @Html.ActionLink("Edycja", "EditPerson", new { id = @p.id })
                     </td>

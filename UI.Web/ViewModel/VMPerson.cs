@@ -23,5 +23,9 @@ namespace UI.Web.ViewModel
         [Required]
         [Display(Name = "Cosik: ")]
         public bool Discrimination { get; set; }
+        [Display(Name = "Liczba szkoleń: ")]
+        public int CourseCount { get; set; }
+        [Display(Name = "Liczba kursów: ")]
+        public int GradeCount { get; set; }
     }
 }

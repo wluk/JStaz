@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using SERVICE;
 using UI.Web.ViewModel;
-using MODEL.Model;
+ 
 
 namespace UI.Web.Controllers
 {
@@ -16,16 +16,19 @@ namespace UI.Web.Controllers
             var tmp_persons = SELECT.SelectAllPerson();
             var model = new List<VMPerson>();
             int i = 0;
+
             foreach (var p in tmp_persons)
             {
                 model.Add(new VMPerson()
                     {
-                        id = p.PersonID,
+                        id = p.id,
                         FirstName = p.FirstName,
                         LastName = p.LastName,
                         EnrollmentDate = p.EnrollmentDate,
                         HireDate = p.HireDate,
-                        Discrimination = p.Discrimination
+                        Discrimination = p.Discrimination,
+                        CourseCount = p.CourseCount,
+                        GradeCount = p.GradeCount
                     });
                 i++;
             }
@@ -38,7 +41,7 @@ namespace UI.Web.Controllers
             var tmp_person = SELECT.SelectPersonById(id);
             VMPerson model = new VMPerson()
             {
-                id = tmp_person.PersonID,
+                id = tmp_person.id,
                 FirstName = tmp_person.FirstName,
                 LastName = tmp_person.LastName,
                 EnrollmentDate = tmp_person.EnrollmentDate,
@@ -56,7 +59,7 @@ namespace UI.Web.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            Person p = new Person()
+            var p = new MPerson()
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,
@@ -80,7 +83,7 @@ namespace UI.Web.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            Person p = new Person()
+            MPerson p = new MPerson()
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,

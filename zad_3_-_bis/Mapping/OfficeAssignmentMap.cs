@@ -13,12 +13,12 @@ namespace zad_3___bis.Mapping
         public OfficeAssignmentMap()
         {
             Id(x => x.InstructorID)
-             .Column("InstructorID")
-             .CustomType("Int32")
-             .Access.Property()
-             .CustomSqlType("INTEGER")
-             .Not.Nullable()
-             .GeneratedBy.Identity();
+                .GeneratedBy.Foreign("Person");
+            //.Column("InstructorID")
+            //.CustomType("Int32")
+            //.Access.Property()
+            //.CustomSqlType("INTEGER")
+            //.Not.Nullable();
 
             Map(x => x.Location)
               .CustomType("AnsiString")
@@ -30,7 +30,17 @@ namespace zad_3___bis.Mapping
             Map(x => x.Timestamp)
                 .CustomType("TimeAsTimeSpan");
 
+            //HasOne(x => x.Person)
+            //    .Class<Person>()
+            //    .Access.Property()
+            //    .Cascade.None();
             HasOne(x => x.Person).Constrained();
+
+                //.Class<Person>()
+                //.Access.Property()
+                //.Cascade.None()
+                //.Constrained();
+
         }
     }
 }

@@ -8,7 +8,7 @@ namespace zad_3___bis.Model
 {
     public class Person
     {
-        public virtual int PersonID { get; set; }
+        public virtual Guid PersonID { get; set; }
         public virtual string LastName { get; set; }
         public virtual string FirstName { get; set; }
         public virtual DateTime? HireDate { get; set; }

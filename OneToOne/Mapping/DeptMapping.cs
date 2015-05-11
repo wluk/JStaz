@@ -12,11 +12,22 @@ namespace OneToOne.Mapping
     {
         public DeptMapping()
         {
-            Id(x => x.Id).GeneratedBy.Identity(); ;
+            Id(x => x.DepId)
+                .Column("DepId")
+                .CustomType("Int32")
+                .Access.Property()
+                .CustomSqlType("INTEGER")
+                .Not.Nullable()
+                .GeneratedBy.Assigned();
             Map(x => x.DeptName);
             Map(x => x.DeptLocation);
 
-            HasOne(x => x.Employee).Constrained();
+            HasOne(x => x.Employee)
+                .Class<Employee>()
+                .Access.Property()
+                .Cascade.None()
+                .LazyLoad()
+                .Constrained();
         }
     }
 }

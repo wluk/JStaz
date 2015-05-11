@@ -7,9 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using zad_3___bis.Model;
 
-namespace zad_3___bis
+namespace ManyToMany
 {
     public class NHibernateHelper
     {
@@ -20,32 +19,31 @@ namespace zad_3___bis
             get
             {
                 if (_sessionFactory == null)
-
                     InitializeSessionFactory();
+
                 return _sessionFactory;
             }
         }
 
         private static void InitializeSessionFactory()
         {
-            try
+            //try
             {
                 _sessionFactory = Fluently.Configure()
-                .Database(MsSqlConfiguration.MsSql2012
-                .ConnectionString(@"Server=.; Database=NHibernate_ex_3; Trusted_Connection=True;")
-                .ShowSql()
-                )
-                .Mappings(m => m.FluentMappings
+                    .Database(MsSqlConfiguration.MsSql2012
+                        .ConnectionString(@"Server=.; Database=ManyToMany; Trusted_Connection=True;")
+                        .ShowSql())
+               .Mappings(m =>
+                   m.FluentMappings
                     .AddFromAssemblyOf<Program>())
-                    .ExposeConfiguration(cfg => new SchemaExport(cfg)
-                        .Create(true, true))
-                        .BuildSessionFactory();
+                    .ExposeConfiguration(cfg => new SchemaExport(cfg).Create(true, true))
+               .BuildSessionFactory();
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("\nBłąd z poziomu: InitializeSessionFactory\n" + ex.Message + "\n" + ex.InnerException.Message);
-                Console.ReadLine();
-            }
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex);
+            //    Console.ReadLine();
+            //}
         }
 
         public static ISession OpenSession()

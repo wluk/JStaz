@@ -30,7 +30,8 @@ namespace zad_3___bis.Mapping
                 .Access.Property()
                 .Generated.Never();
 
-            References(x => x.StudentID, "StudentID").Cascade.None();
+            References(x => x.StudentID, "StudentID")
+                .Cascade.None();
             References(x => x.CourseID, "CourseID").Cascade.None();
         }
     }
