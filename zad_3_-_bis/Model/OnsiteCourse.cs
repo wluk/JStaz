@@ -13,6 +13,6 @@ namespace zad_3___bis.Model
         public virtual DateTime Days { get; set; }
         public virtual TimeSpan Time { get; set; }
 
-        public virtual Course Course { get; set; }
+        public virtual Course course { get; set; }
     }
 }

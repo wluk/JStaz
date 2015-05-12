@@ -11,12 +11,18 @@ namespace zad_3___bis.Model
     {
         public OnsiteCourseMap()
         {
-            Id(x => x.CourseID).GeneratedBy.Identity();
+            Id(x => x.CourseID)
+                .Column("CourseID")
+                .CustomType("Int32")
+                .Access.Property()
+                .CustomSqlType("INTEGER")
+                .Not.Nullable()
+                .GeneratedBy.Foreign("course");
             Map(x => x.Location);
             Map(x => x.Days);
             Map(x => x.Time).CustomType("TimeAsTimeSpan");
 
-            HasOne(x => x.Course).Constrained();
+            HasOne(x => x.course).Constrained();
         }
     }
 }

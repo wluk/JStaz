@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OneToOne
+namespace OneToOne_bis_
 {
     public class NHibernateHelper
     {
@@ -20,6 +20,7 @@ namespace OneToOne
             {
                 if (_sessionFactory == null)
                     InitializeSessionFactory();
+
                 return _sessionFactory;
             }
         }
@@ -29,20 +30,20 @@ namespace OneToOne
             try
             {
                 _sessionFactory = Fluently.Configure()
-                    .Database(MsSqlConfiguration.MsSql2012
+                .Database(MsSqlConfiguration.MsSql2012
                     .ConnectionString(@"Server=.; Database=OneToOne; Trusted_Connection=True;")
                     .ShowSql()
-                    )
-                    .Mappings(m => m.FluentMappings
-                        .AddFromAssemblyOf<Program>())
-                        .ExposeConfiguration(cfg => new SchemaExport(cfg)
-                            .Create(true, true))
-                            .BuildSessionFactory();
+               )
+               .Mappings(m =>
+                   m.FluentMappings
+                    .AddFromAssemblyOf<Program>())
+                    .ExposeConfiguration(cfg => new SchemaExport(cfg).Create(true, true))
+               .BuildSessionFactory();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Błąd z poziomu: InitializeSessionFactory");
-                Console.ReadLine();
+                Console.WriteLine(ex);
+                throw;
             }
         }
 

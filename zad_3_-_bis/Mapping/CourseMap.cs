@@ -12,11 +12,11 @@ namespace zad_3___bis.Mapping
 
             Id(x => x.CourseID)
               .Column("CourseID")
-              .CustomType("Int32")
-              .Access.Property()
-              .CustomSqlType("INTEGER")
-              .Not.Nullable()
-              .GeneratedBy.Identity();
+            .CustomType("Int32")
+            .Access.Property()
+            .CustomSqlType("INTEGER")
+            .Not.Nullable()
+            .GeneratedBy.Identity();
 
             Map(x => x.Title)
               .CustomType("AnsiString")
@@ -35,17 +35,20 @@ namespace zad_3___bis.Mapping
             References(x => x.DepartmentID, "DeptId")
                 .Cascade.None();
 
-            HasOne(x => x.OnlineCourse)
+            //HasOne(x => x.OnlineCourse)
+            //    .Cascade.All();
+
+            HasOne(x => x.online)
                 .Cascade.All();
 
-            HasOne(x => x.OnsiteCourse)
+            HasOne(x => x.onsite)
                 .Cascade.All();
 
             HasMany(x => x.StudentGrades)
                 .KeyColumn("CourseID")
                 .Inverse()
                 .Cascade.All();
-            
+
             HasManyToMany(x => x.Persons)
                 .Cascade.All()
                 .Inverse()

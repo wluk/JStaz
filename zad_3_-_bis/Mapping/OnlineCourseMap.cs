@@ -12,10 +12,15 @@ namespace zad_3___bis.Mapping
     {
         public OnlineCourseMap()
         {
-            Id(x => x.CourseID).GeneratedBy.Identity();
-            Map(x => x.URL);
+            Id(x => x.CourseID)
+                .Column("CourseID")
+                .CustomType("Int32")
+                .Access.Property()
+                .CustomSqlType("INTEGER")
+                .Not.Nullable()
+                .GeneratedBy.Foreign("course");
 
-            HasOne(x => x.Course).Constrained();
+            HasOne(x => x.course).Constrained();
         }
     }
 }

@@ -17,23 +17,30 @@ namespace OneToOne
                 {
                     try
                     {
-                        //var d = new Dept
-                        //{
-                        //    DeptLocation = "BB",
-                        //    DeptName = "Biuro Bielsko",
-                        //    //,
-                        //    //Employee = new Employee
-                        //    //    {
-                        //    //        EmpAge = 8,
-                        //    //       EmpName = "wilu",                                    
-                        //    //    }       
-                        //    Employee = new Employee()
-                        //};
+                        var d1 = new Dept
+                        {
+                            DeptLocation = "BB",
+                            DeptName = "Biuro Bielsko",
+                            Emp = new Employee
+                                {
+                                    EmpAge = 8,
+                                    EmpName = "wilu",
+                                }
+                        };
+                        var d2 = new Dept
+                        {
+                            DeptLocation = "KTW",
+                            DeptName = "Biuro Kato",
+                            Emp = new Employee
+                            {
+                                EmpAge = 16,
+                                EmpName = "xyz",
+                            }
+                        };
 
-                        //session.Save(d);
+                        session.Save(d1, d2);
 
                         transaction.Commit();
-                        Console.WriteLine("OK");
                     }
                     catch (Exception ex)
                     {

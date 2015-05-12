@@ -12,13 +12,15 @@ namespace OneToOne.Mapping
     {
         public EmployeeMapping()
         {
+            Table("Employee");
+            LazyLoad();
             Id(x => x.EmpId)
-                .Column("ContactID")
-                .CustomType("Int32")
-                .Access.Property()
-                .CustomSqlType("INTEGER")
-                .Not.Nullable()
-                .GeneratedBy.Identity();
+              .Column("EmpId")
+              .CustomType("Int32")
+              .Access.Property()
+              .CustomSqlType("INTEGER")
+              .Not.Nullable()
+              .GeneratedBy.Identity();
             Map(x => x.EmpName);
             Map(x => x.EmpAge);
             Map(x => x.Dept);

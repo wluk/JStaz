@@ -13,8 +13,8 @@ namespace zad_3___bis.Model
         public virtual int Credits { get; set; }
 
         public virtual Department DepartmentID { get; set; }
-        public virtual OnlineCourse OnlineCourse { get; set; }
-        public virtual OnsiteCourse OnsiteCourse { get; set; }
+        public virtual OnlineCourse online { get; set; }
+        public virtual OnsiteCourse onsite { get; set; }
         public virtual IList<StudentGrade> StudentGrades { get; set; }
         public virtual IList<Person> Persons { get; set; }
 

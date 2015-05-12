@@ -36,14 +36,14 @@ namespace zad_3___bis
                 .ShowSql()
                 )
                 .Mappings(m => m.FluentMappings
-                    .AddFromAssemblyOf<Program>())
+                    .AddFromAssemblyOf<Course>())
                     .ExposeConfiguration(cfg => new SchemaExport(cfg)
                         .Create(true, true))
                         .BuildSessionFactory();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\nBłąd z poziomu: InitializeSessionFactory\n" + ex.Message + "\n" + ex.InnerException.Message);
+                Console.WriteLine("Błąd z poziomu: InitializeSessionFactory");
                 Console.ReadLine();
             }
         }

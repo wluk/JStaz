@@ -12,17 +12,20 @@ namespace OneToOne.Mapping
     {
         public DeptMapping()
         {
+            Table("Department");
+            LazyLoad();
             Id(x => x.DepId)
-                .Column("DepId")
-                .CustomType("Int32")
-                .Access.Property()
-                .CustomSqlType("INTEGER")
-                .Not.Nullable()
-                .GeneratedBy.Assigned();
+              .Column("DepId")
+              .CustomType("Int32")
+              .Access.Property()
+              .CustomSqlType("INTEGER")
+              .Not.Nullable()
+              .GeneratedBy.Assigned();
+
             Map(x => x.DeptName);
             Map(x => x.DeptLocation);
 
-            HasOne(x => x.Employee)
+            HasOne(x => x.Emp)
                 .Class<Employee>()
                 .Access.Property()
                 .Cascade.None()

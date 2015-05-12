@@ -13,11 +13,11 @@ namespace zad_3___bis.Model
         public virtual float Budget { get; set; }
         public virtual DateTime StartDate { get; set; }
         public virtual string Administrator { get; set; }
-        public virtual IList<Course> Coursession { get; set; }
+        public virtual IList<Course> Courses { get; set; }
 
         public Department()
         {
-            Coursession = new List<Course>();
+            Courses = new List<Course>();
         }
     }
 }

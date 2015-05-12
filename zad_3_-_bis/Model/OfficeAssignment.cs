@@ -8,7 +8,7 @@ namespace zad_3___bis.Model
 {
     public class OfficeAssignment
     {
-        public virtual Guid InstructorID{ get; set; }
+        public virtual int InstructorID{ get; set; }
         public virtual string Location { get; set; }
         public virtual TimeSpan Timestamp { get; set; }
 

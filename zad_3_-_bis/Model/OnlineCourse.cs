@@ -11,6 +11,6 @@ namespace zad_3___bis.Model
         public virtual int CourseID { get; set; }
         public virtual string URL { get; set; }
 
-        public virtual Course Course { get; set; }
+        public virtual Course course { get; set; }
     }
 }

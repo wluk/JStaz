@@ -11,14 +11,12 @@ namespace zad_3___bis.Mapping
             LazyLoad();
 
             Id(x => x.PersonID)
-                .GeneratedBy
-                .Guid();
-            //.Column("PersonID")
-            //.CustomType("Int32")
-            //.Access.Property()
-            //.CustomSqlType("INTEGER")
-            //.Not.Nullable()
-            //.GeneratedBy.Identity();
+            .Column("PersonID")
+            .CustomType("Int32")
+            .Access.Property()
+            .CustomSqlType("INTEGER")
+            .Not.Nullable()
+            .GeneratedBy.Identity();
 
             Map(x => x.LastName)
               .CustomType("AnsiString")
