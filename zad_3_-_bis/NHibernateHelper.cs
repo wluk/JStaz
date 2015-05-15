@@ -38,10 +38,11 @@ namespace zad_3___bis
                 .Mappings(m => m.FluentMappings
                     .AddFromAssemblyOf<Course>())
                     .ExposeConfiguration(cfg => new SchemaExport(cfg)
+                        //.Create(true, true))
                         .Create(true, true))
-                        .BuildSessionFactory();
+                    .BuildSessionFactory();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("Błąd z poziomu: InitializeSessionFactory");
                 Console.ReadLine();

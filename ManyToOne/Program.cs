@@ -21,7 +21,7 @@ namespace ManyToOne
                         transaction.Commit();
                         Console.WriteLine("OK");
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         Console.WriteLine("Błąd z poziomu: programu");
                     }

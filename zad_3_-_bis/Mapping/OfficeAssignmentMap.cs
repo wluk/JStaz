@@ -30,15 +30,7 @@ namespace zad_3___bis.Mapping
             Map(x => x.Timestamp)
                 .CustomType("TimeAsTimeSpan");
 
-            HasOne(x => x.Person)
-                .Class<Person>()
-                .Access.Property()
-                .Cascade.None();
-            //HasOne(x => x.Person).Constrained();
-                //.Class<Person>()
-                //.Access.Property()
-                //.Cascade.None()
-                //.Constrained();
+            HasOne(x => x.person).Constrained();
 
         }
     }

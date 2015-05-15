@@ -64,7 +64,7 @@ namespace ManyToMany
                     Console.WriteLine("\n\nOK");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("Błąd z poziomu: programu");
                 Console.ReadLine();

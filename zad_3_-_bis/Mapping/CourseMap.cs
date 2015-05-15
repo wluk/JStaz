@@ -35,9 +35,6 @@ namespace zad_3___bis.Mapping
             References(x => x.DepartmentID, "DeptId")
                 .Cascade.None();
 
-            //HasOne(x => x.OnlineCourse)
-            //    .Cascade.All();
-
             HasOne(x => x.online)
                 .Cascade.All();
 

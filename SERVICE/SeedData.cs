@@ -191,7 +191,7 @@ namespace SERVICE
 
                         transaction.Commit();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                     }
                 }

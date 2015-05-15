@@ -12,6 +12,6 @@ namespace zad_3___bis.Model
         public virtual string Location { get; set; }
         public virtual TimeSpan Timestamp { get; set; }
 
-        public virtual Person Person { get; set; }
+        public virtual Person person { get; set; }
     }
 }

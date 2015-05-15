@@ -15,7 +15,7 @@ namespace zad_3___bis.Model
         public virtual DateTime? EnrollmentDate { get; set; }
         public virtual bool Discrimination { get; set; }
 
-        public virtual OfficeAssignment OfficeAssignment { get; set; }
+        public virtual OfficeAssignment officeAssignment { get; set; }
         public virtual IList<StudentGrade> StudentGrades { get; set; }
         public virtual IList<Course> Courses { get; set; }
 

@@ -20,6 +20,8 @@ namespace zad_3___bis.Mapping
                 .Not.Nullable()
                 .GeneratedBy.Foreign("course");
 
+            Map(x => x.URL);
+
             HasOne(x => x.course).Constrained();
         }
     }

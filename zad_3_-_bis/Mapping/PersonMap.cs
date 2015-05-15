@@ -46,18 +46,9 @@ namespace zad_3___bis.Mapping
                 .Cascade.All()
                 .Table("CourseInstructor");
 
-            HasOne(x => x.OfficeAssignment)
+            HasOne(x => x.officeAssignment)
+                .Cascade.DeleteOrphans()
                 .Cascade.All();
-
-            //.Class<OfficeAssignment>()
-            //.Access.Property()
-            //.Cascade.None();
-            //HasOne(x => x.OfficeAssignment)
-            //    .Class<OfficeAssignment>()
-            //    .Access.Property()
-            //    .Cascade.None()
-            //    .Constrained();
-
         }
     }
 }
