@@ -9,6 +9,7 @@ using UI.Web.ViewModel;
 
 namespace UI.Web.Controllers
 {
+    //[Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()

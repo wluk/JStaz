@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Quartz
@@ -28,7 +29,7 @@ namespace Quartz
               .WithIdentity("myTrigger", "group1")
               .StartNow()
               .WithSimpleSchedule(x => x
-                  .WithIntervalInSeconds(30)
+                  .WithIntervalInSeconds(5)
                   .RepeatForever())
               .Build();
 
@@ -43,11 +44,11 @@ namespace Quartz
               .WithIdentity("myTrigger2", "group2")
               .StartNow()
               .WithSimpleSchedule(x => x
-                  .WithIntervalInSeconds(60)
+                  .WithIntervalInSeconds(10)
                   .RepeatForever())
               .Build();
 
-            sched.ScheduleJob(job2, trigger2);
+            //sched.ScheduleJob(job2, trigger2);
         }
     }
 
@@ -55,7 +56,13 @@ namespace Quartz
     {
         public void Execute(IJobExecutionContext context)
         {
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
+            //Console.Clear();
+            Console.WriteLine("\nNowe zadanie\n");
+
+            Console.WriteLine("1.1\t" + DateTime.Now.ToLongTimeString());
+            Console.WriteLine("(+2s)");
+            Thread.Sleep(2000);
+            Console.WriteLine("1.2\t" + DateTime.Now.ToLongTimeString());
         }
     }
 
@@ -63,7 +70,7 @@ namespace Quartz
     {
         public void Execute(IJobExecutionContext context)
         {
-            Console.WriteLine();
+            Console.WriteLine("2\t" + DateTime.Now.ToLongTimeString());
         }
     }
 }

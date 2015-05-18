@@ -11,7 +11,7 @@ namespace zad_3___bis.Mapping
             LazyLoad();
 
             Id(x => x.PersonID)
-            .Column("PersonID")
+                //.Column("PersonID")
             .CustomType("Int32")
             .Access.Property()
             .CustomSqlType("INTEGER")

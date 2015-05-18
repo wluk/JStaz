@@ -17,9 +17,7 @@ namespace zad_3___bis
         {
             session = NHibernateHelper.OpenSession();
 
-            //InsertCourse();
             InsertData();
-
             //CourseInfo();
             //PersonType();
             DelAllPerson();
@@ -222,65 +220,6 @@ namespace zad_3___bis
             }
         }
 
-        private static void InsertCourse()
-        {
-            using (var transaction = session.BeginTransaction())
-            {
-                try
-                {
-                    var d1 = new Department
-                    {
-                        Administrator = "Jan Kowalski",
-                        Budget = 1000,
-                        Name = "Bielsko",
-                        StartDate = DateTime.Now
-                    };
-                    session.Save(d1);
-
-                    var d2 = new Department
-                    {
-                        Administrator = "Adam Nowak",
-                        Budget = 5000,
-                        Name = "Kato",
-                        StartDate = DateTime.Now.AddDays(-365)
-                    };
-                    session.Save(d2);
-
-                    var c1 = new Course
-                    {
-                        Title = "Sterowanie sterowcem",
-                        DepartmentID = d1,
-                        Credits = 10
-                    };
-                    session.Save(c1);
-
-                    var c2 = new Course
-                    {
-                        Title = "Kurs pisania na maszynie",
-                        DepartmentID = d2,
-                        Credits = 28,
-                    };
-                    session.Save(c2);
-
-                    c1.online = new OnlineCourse();
-                    c1.online.URL = "www.google.pl";
-                    c1.online.course = c1;
-                    d1.Courses.Add(c1);
-
-                    session.Save(c1);
-
-
-                    session.Flush();
-                    transaction.Commit();
-                    Console.WriteLine("\nInsert - ok");
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("\nBłąd z poziomu: Insert\n");
-                }
-            }
-        }
-
         private static void DelAllPerson()
         {
             var DBpersons = session.Query<Person>().ToList();
@@ -309,7 +248,6 @@ namespace zad_3___bis
             catch (Exception ex)
             {
                 Console.WriteLine("Błąd przy kasowaniu PersonID = " + id + "\n" + ex);
-
             }
         }
 
@@ -367,19 +305,6 @@ namespace zad_3___bis
                         Console.WriteLine("\t- Szkolenie stacjonarne: brak\n\n");
                     }
                 }
-            }
-        }
-
-        private static void DelPersons()
-        {
-            try
-            {
-                session.Delete(session.Query<Person>());
-            }
-            catch (Exception)
-            {
-
-                throw;
             }
         }
     }

@@ -12,11 +12,11 @@ namespace SERVICE
     {
         public static void SeedDataStart()
         {
-            using (var session = NHibernateHelper.OpenSession())
+            try
             {
-                using (var transaction = session.BeginTransaction())
+                using (var session = NHibernateHelper.OpenSession())
                 {
-                    try
+                    using (var transaction = session.BeginTransaction())
                     {
                         var d1 = new Department
                         {
@@ -71,35 +71,39 @@ namespace SERVICE
                         var onS1 = new OnsiteCourse
                         {
                             Days = DateTime.Now.AddDays(+3),
-                            Location = "BB",
-                            Time = new TimeSpan(1, 30, 00, 00),
-                            Course = c1
+                            Location = "L120",
+                            Time = new TimeSpan(0, 45, 00),
+                            course = c1
                         };
-                        session.Save(onS1);
+                        c1.onsite = onS1;
+                        session.Save(c1);
 
                         var onS2 = new OnsiteCourse
                         {
                             Days = DateTime.Now.AddDays(+3),
-                            Location = "KTW",
-                            Time = new TimeSpan(0, 45, 00, 00),
-                            Course = c1
+                            Location = "A020",
+                            Time = new TimeSpan(1, 30, 00),
+                            course = c2
                         };
-                        session.Save(onS2);
+                        c2.onsite = onS2;
+                        session.Save(c2);
 
                         var onL1 = new OnlineCourse
                         {
                             URL = "www.google.pl",
-                            Course = c2,
+                            course = c2,
                         };
-                        session.Save(onL1);
+                        c2.online = onL1;
+                        session.Save(c2);
 
 
                         var onL2 = new OnlineCourse
                         {
                             URL = "http://mistrz-klawiatury.softonic.pl/",
-                            Course = c2,
+                            course = c1,
                         };
-                        session.Save(onL2);
+                        c1.online = onL2;
+                        session.Save(c1);
 
                         var s1 = new Person()
                         {
@@ -176,25 +180,29 @@ namespace SERVICE
                         var o1 = new OfficeAssignment
                         {
                             Location = "KTW",
-                            Timestamp = new TimeSpan(0, 03, 00, 00),
-                            Person = t1
+                            Timestamp = new TimeSpan(03, 00, 00),
+                            person = t1
                         };
-                        session.Save(o1);
+                        t1.officeAssignment = o1;
+                        session.Save(t1);
 
                         var o2 = new OfficeAssignment
                         {
                             Location = "BB",
-                            Timestamp = new TimeSpan(0, 01, 30, 00),
-                            Person = t2
+                            Timestamp = new TimeSpan(01, 30, 00),
+                            person = t2
                         };
-                        session.Save(o2);
+                        t2.officeAssignment = o2;
+                        session.Save(t2);
 
                         transaction.Commit();
-                    }
-                    catch (Exception)
-                    {
+                        session.Flush();
                     }
                 }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }
