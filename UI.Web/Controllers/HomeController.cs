@@ -5,16 +5,23 @@ using System.Web;
 using System.Web.Mvc;
 using SERVICE;
 using UI.Web.ViewModel;
- 
+
 
 namespace UI.Web.Controllers
 {
-    //[Authorize]
+
     public class HomeController : Controller
     {
+        private CRUD _crud;
+
+        public HomeController()
+        {
+            _crud = new CRUD();
+        }
+
         public ActionResult Index()
         {
-            var tmp_persons = SELECT.SelectAllPerson();
+            var tmp_persons = _crud.SelectAll();
             var model = new List<VMPerson>();
             int i = 0;
 
@@ -22,14 +29,14 @@ namespace UI.Web.Controllers
             {
                 model.Add(new VMPerson()
                     {
-                        id = p.id,
+                        id = p.PersonID,
                         FirstName = p.FirstName,
                         LastName = p.LastName,
                         EnrollmentDate = p.EnrollmentDate,
                         HireDate = p.HireDate,
                         Discrimination = p.Discrimination,
-                        CourseCount = p.CourseCount,
-                        GradeCount = p.GradeCount
+                        CourseCount = p.CoursesCount,
+                        GradeCount = p.StudentGradesCount
                     });
                 i++;
             }
@@ -39,10 +46,10 @@ namespace UI.Web.Controllers
 
         public ActionResult EditPerson(int id)
         {
-            var tmp_person = SELECT.SelectPersonById(id);
+            var tmp_person = _crud.SelectById(id);
             VMPerson model = new VMPerson()
             {
-                id = tmp_person.id,
+                id = tmp_person.PersonID,
                 FirstName = tmp_person.FirstName,
                 LastName = tmp_person.LastName,
                 EnrollmentDate = tmp_person.EnrollmentDate,
@@ -60,15 +67,16 @@ namespace UI.Web.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var p = new MPerson()
+            var p = new PersonDTO()
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Discrimination = model.Discrimination,
                 EnrollmentDate = model.EnrollmentDate,
-                HireDate = model.HireDate
+                HireDate = model.HireDate,
+                PersonID = model.id
             };
-            UPDATE.UdDatePerson(p, model.id);
+            _crud.Update(p);
 
             return RedirectToAction("Index");
         }
@@ -84,7 +92,7 @@ namespace UI.Web.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            MPerson p = new MPerson()
+            PersonDTO p = new PersonDTO()
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,
@@ -92,13 +100,13 @@ namespace UI.Web.Controllers
                 EnrollmentDate = model.EnrollmentDate,
                 HireDate = model.HireDate
             };
-            CREATE.CreatePerson(p);
+            _crud.Create(p);
             return RedirectToAction("Index");
         }
 
         public ActionResult DelPerson(int id)
         {
-            DELETE.DelPerson(id);
+            _crud.Delete(id);
             return RedirectToAction("Index");
         }
     }

@@ -7,9 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using zad_3___bis.Model;
 
-namespace zad_3___bis
+namespace WCFWebService
 {
     public class NHibernateHelper
     {
@@ -36,22 +35,20 @@ namespace zad_3___bis
                 .ShowSql()
                 )
                 .Mappings(m => m.FluentMappings
-                    .AddFromAssemblyOf<Course>())
+                    .AddFromAssemblyOf<WCFWebService>())
                     .ExposeConfiguration(cfg => new SchemaExport(cfg)
-                        //.Create(true, true))
                         .Create(true, true))
                     .BuildSessionFactory();
             }
             catch (Exception)
             {
-                Console.WriteLine("Błąd z poziomu: InitializeSessionFactory");
-                Console.ReadLine();
+                throw;
             }
         }
 
         public static ISession OpenSession()
         {
-            
+
             return SessionFactory.OpenSession();
         }
     }
