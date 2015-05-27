@@ -32,24 +32,18 @@ namespace WcfService
         {
             try
             {
-                //_sessionFactory = Fluently.Configure()
-                //.Database(MsSqlConfiguration.MsSql2012
-                //.ConnectionString(@"Server=.; Database=NHibernate_ex_3; Trusted_Connection=True;")
-                //.ShowSql()
-                //)
-                //.Mappings(m => m.FluentMappings
-                //    .AddFromAssemblyOf<Course>())
-                //    .ExposeConfiguration(cfg => new SchemaExport(cfg)
-                //        .Create(true, true))
-                //        .BuildSessionFactory();
-
                 _sessionFactory = Fluently.Configure()
                     .Database(MsSqlConfiguration.MsSql2012
                     .ConnectionString(@"Server=.; Database=NHibernate_ex_3; Trusted_Connection=True;")
                     .ShowSql()
                 )
+                    //.Mappings(m => m.FluentMappings
+                    //    .AddFromAssemblyOf<Person>())
+                    //        .BuildSessionFactory();
                 .Mappings(m => m.FluentMappings
-                    .AddFromAssemblyOf<Person>())
+                    .AddFromAssemblyOf<Course>())
+                    .ExposeConfiguration(cfg => new SchemaExport(cfg)
+                        .Create(true, true))
                         .BuildSessionFactory();
             }
             catch (Exception)
@@ -62,18 +56,5 @@ namespace WcfService
         {
             return SessionFactory.OpenSession();
         }
-
-        //public static ISession OpenSession()
-        //{
-        //    if (CurrentSessionContext.HasBind(SessionFactory))
-        //    {
-        //        return SessionFactory.GetCurrentSession();
-        //    }
-        //    // else  
-        //    //var session = SessionFactory.OpenSession();
-        //    //NHibernate.Context.CurrentSessionContext.Bind(session);
-        //    //return session;
-        //    return SessionFactory.OpenSession();
-        //}
     }
 }

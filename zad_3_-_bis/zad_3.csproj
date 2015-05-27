@@ -53,20 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mapping\OfficeAssignmentMap.cs" />
-    <Compile Include="Mapping\PersonMap.cs" />
-    <Compile Include="Mapping\CourseMap.cs" />
-    <Compile Include="Mapping\DepartmentMap.cs" />
-    <Compile Include="Mapping\OnlineCourseMap.cs" />
-    <Compile Include="Mapping\OnsiteCourseMap.cs" />
-    <Compile Include="Mapping\StudentGradeMap.cs" />
-    <Compile Include="Model\Course.cs" />
-    <Compile Include="Model\Department.cs" />
-    <Compile Include="Model\OfficeAssignment.cs" />
-    <Compile Include="Model\OnlineCourse.cs" />
-    <Compile Include="Model\OnsiteCourse.cs" />
-    <Compile Include="Model\Person.cs" />
-    <Compile Include="Model\StudentGrade.cs" />
     <Compile Include="NHibernateHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +60,16 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MODEL\MODEL.csproj">
+      <Project>{d3a7d3f6-72b5-4a35-bce3-6ff194ca2a79}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SERVICE\SERVICES.csproj">
+      <Project>{49723866-6d66-4f52-9cc7-2dc2c8067d39}</Project>
+      <Name>SERVICES</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

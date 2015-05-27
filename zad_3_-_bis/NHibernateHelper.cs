@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using zad_3___bis.Model;
 
 namespace zad_3___bis
 {
@@ -36,7 +35,7 @@ namespace zad_3___bis
                 .ShowSql()
                 )
                 .Mappings(m => m.FluentMappings
-                    .AddFromAssemblyOf<Course>())
+                    .AddFromAssemblyOf<Program>())
                     .ExposeConfiguration(cfg => new SchemaExport(cfg)
                         //.Create(true, true))
                         .Create(true, true))

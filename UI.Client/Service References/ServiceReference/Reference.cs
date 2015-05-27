@@ -15,39 +15,17 @@ namespace UI.Client.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PersonDTO", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ToDoItem", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
-    public partial class PersonDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ToDoItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CoursesCountField;
+        private System.Guid IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool DiscriminationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> EnrollmentDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> HireDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PersonIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StudentGradesCountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.OfficeAssignment officeAssignmentField;
+        private string DescriptionField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -59,946 +37,28 @@ namespace UI.Client.ServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CoursesCount {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Guid Id {
             get {
-                return this.CoursesCountField;
+                return this.IdField;
             }
             set {
-                if ((this.CoursesCountField.Equals(value) != true)) {
-                    this.CoursesCountField = value;
-                    this.RaisePropertyChanged("CoursesCount");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Discrimination {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Description {
             get {
-                return this.DiscriminationField;
+                return this.DescriptionField;
             }
             set {
-                if ((this.DiscriminationField.Equals(value) != true)) {
-                    this.DiscriminationField = value;
-                    this.RaisePropertyChanged("Discrimination");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> EnrollmentDate {
-            get {
-                return this.EnrollmentDateField;
-            }
-            set {
-                if ((this.EnrollmentDateField.Equals(value) != true)) {
-                    this.EnrollmentDateField = value;
-                    this.RaisePropertyChanged("EnrollmentDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> HireDate {
-            get {
-                return this.HireDateField;
-            }
-            set {
-                if ((this.HireDateField.Equals(value) != true)) {
-                    this.HireDateField = value;
-                    this.RaisePropertyChanged("HireDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PersonID {
-            get {
-                return this.PersonIDField;
-            }
-            set {
-                if ((this.PersonIDField.Equals(value) != true)) {
-                    this.PersonIDField = value;
-                    this.RaisePropertyChanged("PersonID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int StudentGradesCount {
-            get {
-                return this.StudentGradesCountField;
-            }
-            set {
-                if ((this.StudentGradesCountField.Equals(value) != true)) {
-                    this.StudentGradesCountField = value;
-                    this.RaisePropertyChanged("StudentGradesCount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.OfficeAssignment officeAssignment {
-            get {
-                return this.officeAssignmentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.officeAssignmentField, value) != true)) {
-                    this.officeAssignmentField = value;
-                    this.RaisePropertyChanged("officeAssignment");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OfficeAssignment", Namespace="http://schemas.datacontract.org/2004/07/MODEL.Model")]
-    [System.SerializableAttribute()]
-    public partial class OfficeAssignment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int InstructorIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LocationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.TimeSpan TimestampField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.Person personField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InstructorID {
-            get {
-                return this.InstructorIDField;
-            }
-            set {
-                if ((this.InstructorIDField.Equals(value) != true)) {
-                    this.InstructorIDField = value;
-                    this.RaisePropertyChanged("InstructorID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Location {
-            get {
-                return this.LocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LocationField, value) != true)) {
-                    this.LocationField = value;
-                    this.RaisePropertyChanged("Location");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.TimeSpan Timestamp {
-            get {
-                return this.TimestampField;
-            }
-            set {
-                if ((this.TimestampField.Equals(value) != true)) {
-                    this.TimestampField = value;
-                    this.RaisePropertyChanged("Timestamp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.Person person {
-            get {
-                return this.personField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.personField, value) != true)) {
-                    this.personField = value;
-                    this.RaisePropertyChanged("person");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/MODEL.Model")]
-    [System.SerializableAttribute()]
-    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.Course[] CoursesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool DiscriminationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> EnrollmentDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> HireDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PersonIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.StudentGrade[] StudentGradesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.OfficeAssignment officeAssignmentField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.Course[] Courses {
-            get {
-                return this.CoursesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CoursesField, value) != true)) {
-                    this.CoursesField = value;
-                    this.RaisePropertyChanged("Courses");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Discrimination {
-            get {
-                return this.DiscriminationField;
-            }
-            set {
-                if ((this.DiscriminationField.Equals(value) != true)) {
-                    this.DiscriminationField = value;
-                    this.RaisePropertyChanged("Discrimination");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> EnrollmentDate {
-            get {
-                return this.EnrollmentDateField;
-            }
-            set {
-                if ((this.EnrollmentDateField.Equals(value) != true)) {
-                    this.EnrollmentDateField = value;
-                    this.RaisePropertyChanged("EnrollmentDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> HireDate {
-            get {
-                return this.HireDateField;
-            }
-            set {
-                if ((this.HireDateField.Equals(value) != true)) {
-                    this.HireDateField = value;
-                    this.RaisePropertyChanged("HireDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PersonID {
-            get {
-                return this.PersonIDField;
-            }
-            set {
-                if ((this.PersonIDField.Equals(value) != true)) {
-                    this.PersonIDField = value;
-                    this.RaisePropertyChanged("PersonID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.StudentGrade[] StudentGrades {
-            get {
-                return this.StudentGradesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StudentGradesField, value) != true)) {
-                    this.StudentGradesField = value;
-                    this.RaisePropertyChanged("StudentGrades");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.OfficeAssignment officeAssignment {
-            get {
-                return this.officeAssignmentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.officeAssignmentField, value) != true)) {
-                    this.officeAssignmentField = value;
-                    this.RaisePropertyChanged("officeAssignment");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Course", Namespace="http://schemas.datacontract.org/2004/07/MODEL.Model")]
-    [System.SerializableAttribute()]
-    public partial class Course : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CourseIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CreditsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.Department DepartmentIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.Person[] PersonsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.StudentGrade[] StudentGradesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TitleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.OnlineCourse onlineField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.OnsiteCourse onsiteField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CourseID {
-            get {
-                return this.CourseIDField;
-            }
-            set {
-                if ((this.CourseIDField.Equals(value) != true)) {
-                    this.CourseIDField = value;
-                    this.RaisePropertyChanged("CourseID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Credits {
-            get {
-                return this.CreditsField;
-            }
-            set {
-                if ((this.CreditsField.Equals(value) != true)) {
-                    this.CreditsField = value;
-                    this.RaisePropertyChanged("Credits");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.Department DepartmentID {
-            get {
-                return this.DepartmentIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DepartmentIDField, value) != true)) {
-                    this.DepartmentIDField = value;
-                    this.RaisePropertyChanged("DepartmentID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.Person[] Persons {
-            get {
-                return this.PersonsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PersonsField, value) != true)) {
-                    this.PersonsField = value;
-                    this.RaisePropertyChanged("Persons");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.StudentGrade[] StudentGrades {
-            get {
-                return this.StudentGradesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StudentGradesField, value) != true)) {
-                    this.StudentGradesField = value;
-                    this.RaisePropertyChanged("StudentGrades");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.OnlineCourse online {
-            get {
-                return this.onlineField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.onlineField, value) != true)) {
-                    this.onlineField = value;
-                    this.RaisePropertyChanged("online");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.OnsiteCourse onsite {
-            get {
-                return this.onsiteField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.onsiteField, value) != true)) {
-                    this.onsiteField = value;
-                    this.RaisePropertyChanged("onsite");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StudentGrade", Namespace="http://schemas.datacontract.org/2004/07/MODEL.Model")]
-    [System.SerializableAttribute()]
-    public partial class StudentGrade : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.Course CourseIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int EnrollmentIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GradeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.Person StudentIDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.Course CourseID {
-            get {
-                return this.CourseIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CourseIDField, value) != true)) {
-                    this.CourseIDField = value;
-                    this.RaisePropertyChanged("CourseID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int EnrollmentID {
-            get {
-                return this.EnrollmentIDField;
-            }
-            set {
-                if ((this.EnrollmentIDField.Equals(value) != true)) {
-                    this.EnrollmentIDField = value;
-                    this.RaisePropertyChanged("EnrollmentID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Grade {
-            get {
-                return this.GradeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GradeField, value) != true)) {
-                    this.GradeField = value;
-                    this.RaisePropertyChanged("Grade");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.Person StudentID {
-            get {
-                return this.StudentIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StudentIDField, value) != true)) {
-                    this.StudentIDField = value;
-                    this.RaisePropertyChanged("StudentID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Department", Namespace="http://schemas.datacontract.org/2004/07/MODEL.Model")]
-    [System.SerializableAttribute()]
-    public partial class Department : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AdministratorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float BudgetField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.Course[] CoursesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DepartmentIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime StartDateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Administrator {
-            get {
-                return this.AdministratorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AdministratorField, value) != true)) {
-                    this.AdministratorField = value;
-                    this.RaisePropertyChanged("Administrator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float Budget {
-            get {
-                return this.BudgetField;
-            }
-            set {
-                if ((this.BudgetField.Equals(value) != true)) {
-                    this.BudgetField = value;
-                    this.RaisePropertyChanged("Budget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.Course[] Courses {
-            get {
-                return this.CoursesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CoursesField, value) != true)) {
-                    this.CoursesField = value;
-                    this.RaisePropertyChanged("Courses");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DepartmentID {
-            get {
-                return this.DepartmentIDField;
-            }
-            set {
-                if ((this.DepartmentIDField.Equals(value) != true)) {
-                    this.DepartmentIDField = value;
-                    this.RaisePropertyChanged("DepartmentID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime StartDate {
-            get {
-                return this.StartDateField;
-            }
-            set {
-                if ((this.StartDateField.Equals(value) != true)) {
-                    this.StartDateField = value;
-                    this.RaisePropertyChanged("StartDate");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnlineCourse", Namespace="http://schemas.datacontract.org/2004/07/MODEL.Model")]
-    [System.SerializableAttribute()]
-    public partial class OnlineCourse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CourseIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string URLField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.Course courseField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CourseID {
-            get {
-                return this.CourseIDField;
-            }
-            set {
-                if ((this.CourseIDField.Equals(value) != true)) {
-                    this.CourseIDField = value;
-                    this.RaisePropertyChanged("CourseID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string URL {
-            get {
-                return this.URLField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.URLField, value) != true)) {
-                    this.URLField = value;
-                    this.RaisePropertyChanged("URL");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.Course course {
-            get {
-                return this.courseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.courseField, value) != true)) {
-                    this.courseField = value;
-                    this.RaisePropertyChanged("course");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnsiteCourse", Namespace="http://schemas.datacontract.org/2004/07/MODEL.Model")]
-    [System.SerializableAttribute()]
-    public partial class OnsiteCourse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CourseIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DaysField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LocationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.TimeSpan TimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.Client.ServiceReference.Course courseField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CourseID {
-            get {
-                return this.CourseIDField;
-            }
-            set {
-                if ((this.CourseIDField.Equals(value) != true)) {
-                    this.CourseIDField = value;
-                    this.RaisePropertyChanged("CourseID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Days {
-            get {
-                return this.DaysField;
-            }
-            set {
-                if ((this.DaysField.Equals(value) != true)) {
-                    this.DaysField = value;
-                    this.RaisePropertyChanged("Days");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Location {
-            get {
-                return this.LocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LocationField, value) != true)) {
-                    this.LocationField = value;
-                    this.RaisePropertyChanged("Location");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.TimeSpan Time {
-            get {
-                return this.TimeField;
-            }
-            set {
-                if ((this.TimeField.Equals(value) != true)) {
-                    this.TimeField = value;
-                    this.RaisePropertyChanged("Time");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.Client.ServiceReference.Course course {
-            get {
-                return this.courseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.courseField, value) != true)) {
-                    this.courseField = value;
-                    this.RaisePropertyChanged("course");
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
                 }
             }
         }
@@ -1014,77 +74,310 @@ namespace UI.Client.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
-    public interface IService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IToDo")]
+    public interface IToDo {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllPersons", ReplyAction="http://tempuri.org/IService/GetAllPersonsResponse")]
-        UI.Client.ServiceReference.PersonDTO[] GetAllPersons();
+        // CODEGEN: Generating message contract since element name GetToDosResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDo/GetToDos", ReplyAction="http://tempuri.org/IToDo/GetToDosResponse")]
+        UI.Client.ServiceReference.GetToDosResponse GetToDos(UI.Client.ServiceReference.GetToDosRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllPersons", ReplyAction="http://tempuri.org/IService/GetAllPersonsResponse")]
-        System.Threading.Tasks.Task<UI.Client.ServiceReference.PersonDTO[]> GetAllPersonsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDo/GetToDos", ReplyAction="http://tempuri.org/IToDo/GetToDosResponse")]
+        System.Threading.Tasks.Task<UI.Client.ServiceReference.GetToDosResponse> GetToDosAsync(UI.Client.ServiceReference.GetToDosRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Get", ReplyAction="http://tempuri.org/IService/GetResponse")]
-        UI.Client.ServiceReference.PersonDTO Get(int id);
+        // CODEGEN: Generating message contract since element name toDoItem from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDo/AddOrUpdateToDo", ReplyAction="http://tempuri.org/IToDo/AddOrUpdateToDoResponse")]
+        UI.Client.ServiceReference.AddOrUpdateToDoResponse AddOrUpdateToDo(UI.Client.ServiceReference.AddOrUpdateToDoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Get", ReplyAction="http://tempuri.org/IService/GetResponse")]
-        System.Threading.Tasks.Task<UI.Client.ServiceReference.PersonDTO> GetAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDo/AddOrUpdateToDo", ReplyAction="http://tempuri.org/IToDo/AddOrUpdateToDoResponse")]
+        System.Threading.Tasks.Task<UI.Client.ServiceReference.AddOrUpdateToDoResponse> AddOrUpdateToDoAsync(UI.Client.ServiceReference.AddOrUpdateToDoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Add", ReplyAction="http://tempuri.org/IService/AddResponse")]
-        void Add(UI.Client.ServiceReference.PersonDTO p);
+        // CODEGEN: Generating message contract since element name toDoItem from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDo/DeleteToDo", ReplyAction="http://tempuri.org/IToDo/DeleteToDoResponse")]
+        UI.Client.ServiceReference.DeleteToDoResponse DeleteToDo(UI.Client.ServiceReference.DeleteToDoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Add", ReplyAction="http://tempuri.org/IService/AddResponse")]
-        System.Threading.Tasks.Task AddAsync(UI.Client.ServiceReference.PersonDTO p);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceChannel : UI.Client.ServiceReference.IService, System.ServiceModel.IClientChannel {
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDo/DeleteToDo", ReplyAction="http://tempuri.org/IToDo/DeleteToDoResponse")]
+        System.Threading.Tasks.Task<UI.Client.ServiceReference.DeleteToDoResponse> DeleteToDoAsync(UI.Client.ServiceReference.DeleteToDoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceClient : System.ServiceModel.ClientBase<UI.Client.ServiceReference.IService>, UI.Client.ServiceReference.IService {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetToDosRequest {
         
-        public ServiceClient() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetToDos", Namespace="http://tempuri.org/", Order=0)]
+        public UI.Client.ServiceReference.GetToDosRequestBody Body;
+        
+        public GetToDosRequest() {
         }
         
-        public ServiceClient(string endpointConfigurationName) : 
+        public GetToDosRequest(UI.Client.ServiceReference.GetToDosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetToDosRequestBody {
+        
+        public GetToDosRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetToDosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetToDosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public UI.Client.ServiceReference.GetToDosResponseBody Body;
+        
+        public GetToDosResponse() {
+        }
+        
+        public GetToDosResponse(UI.Client.ServiceReference.GetToDosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetToDosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public UI.Client.ServiceReference.ToDoItem[] GetToDosResult;
+        
+        public GetToDosResponseBody() {
+        }
+        
+        public GetToDosResponseBody(UI.Client.ServiceReference.ToDoItem[] GetToDosResult) {
+            this.GetToDosResult = GetToDosResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddOrUpdateToDoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddOrUpdateToDo", Namespace="http://tempuri.org/", Order=0)]
+        public UI.Client.ServiceReference.AddOrUpdateToDoRequestBody Body;
+        
+        public AddOrUpdateToDoRequest() {
+        }
+        
+        public AddOrUpdateToDoRequest(UI.Client.ServiceReference.AddOrUpdateToDoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AddOrUpdateToDoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public UI.Client.ServiceReference.ToDoItem toDoItem;
+        
+        public AddOrUpdateToDoRequestBody() {
+        }
+        
+        public AddOrUpdateToDoRequestBody(UI.Client.ServiceReference.ToDoItem toDoItem) {
+            this.toDoItem = toDoItem;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddOrUpdateToDoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddOrUpdateToDoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public UI.Client.ServiceReference.AddOrUpdateToDoResponseBody Body;
+        
+        public AddOrUpdateToDoResponse() {
+        }
+        
+        public AddOrUpdateToDoResponse(UI.Client.ServiceReference.AddOrUpdateToDoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class AddOrUpdateToDoResponseBody {
+        
+        public AddOrUpdateToDoResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteToDoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteToDo", Namespace="http://tempuri.org/", Order=0)]
+        public UI.Client.ServiceReference.DeleteToDoRequestBody Body;
+        
+        public DeleteToDoRequest() {
+        }
+        
+        public DeleteToDoRequest(UI.Client.ServiceReference.DeleteToDoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DeleteToDoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public UI.Client.ServiceReference.ToDoItem toDoItem;
+        
+        public DeleteToDoRequestBody() {
+        }
+        
+        public DeleteToDoRequestBody(UI.Client.ServiceReference.ToDoItem toDoItem) {
+            this.toDoItem = toDoItem;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteToDoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteToDoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public UI.Client.ServiceReference.DeleteToDoResponseBody Body;
+        
+        public DeleteToDoResponse() {
+        }
+        
+        public DeleteToDoResponse(UI.Client.ServiceReference.DeleteToDoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class DeleteToDoResponseBody {
+        
+        public DeleteToDoResponseBody() {
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IToDoChannel : UI.Client.ServiceReference.IToDo, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ToDoClient : System.ServiceModel.ClientBase<UI.Client.ServiceReference.IToDo>, UI.Client.ServiceReference.IToDo {
+        
+        public ToDoClient() {
+        }
+        
+        public ToDoClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public ToDoClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ToDoClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ToDoClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public UI.Client.ServiceReference.PersonDTO[] GetAllPersons() {
-            return base.Channel.GetAllPersons();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UI.Client.ServiceReference.GetToDosResponse UI.Client.ServiceReference.IToDo.GetToDos(UI.Client.ServiceReference.GetToDosRequest request) {
+            return base.Channel.GetToDos(request);
         }
         
-        public System.Threading.Tasks.Task<UI.Client.ServiceReference.PersonDTO[]> GetAllPersonsAsync() {
-            return base.Channel.GetAllPersonsAsync();
+        public UI.Client.ServiceReference.ToDoItem[] GetToDos() {
+            UI.Client.ServiceReference.GetToDosRequest inValue = new UI.Client.ServiceReference.GetToDosRequest();
+            inValue.Body = new UI.Client.ServiceReference.GetToDosRequestBody();
+            UI.Client.ServiceReference.GetToDosResponse retVal = ((UI.Client.ServiceReference.IToDo)(this)).GetToDos(inValue);
+            return retVal.Body.GetToDosResult;
         }
         
-        public UI.Client.ServiceReference.PersonDTO Get(int id) {
-            return base.Channel.Get(id);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UI.Client.ServiceReference.GetToDosResponse> UI.Client.ServiceReference.IToDo.GetToDosAsync(UI.Client.ServiceReference.GetToDosRequest request) {
+            return base.Channel.GetToDosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UI.Client.ServiceReference.PersonDTO> GetAsync(int id) {
-            return base.Channel.GetAsync(id);
+        public System.Threading.Tasks.Task<UI.Client.ServiceReference.GetToDosResponse> GetToDosAsync() {
+            UI.Client.ServiceReference.GetToDosRequest inValue = new UI.Client.ServiceReference.GetToDosRequest();
+            inValue.Body = new UI.Client.ServiceReference.GetToDosRequestBody();
+            return ((UI.Client.ServiceReference.IToDo)(this)).GetToDosAsync(inValue);
         }
         
-        public void Add(UI.Client.ServiceReference.PersonDTO p) {
-            base.Channel.Add(p);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UI.Client.ServiceReference.AddOrUpdateToDoResponse UI.Client.ServiceReference.IToDo.AddOrUpdateToDo(UI.Client.ServiceReference.AddOrUpdateToDoRequest request) {
+            return base.Channel.AddOrUpdateToDo(request);
         }
         
-        public System.Threading.Tasks.Task AddAsync(UI.Client.ServiceReference.PersonDTO p) {
-            return base.Channel.AddAsync(p);
+        public void AddOrUpdateToDo(UI.Client.ServiceReference.ToDoItem toDoItem) {
+            UI.Client.ServiceReference.AddOrUpdateToDoRequest inValue = new UI.Client.ServiceReference.AddOrUpdateToDoRequest();
+            inValue.Body = new UI.Client.ServiceReference.AddOrUpdateToDoRequestBody();
+            inValue.Body.toDoItem = toDoItem;
+            UI.Client.ServiceReference.AddOrUpdateToDoResponse retVal = ((UI.Client.ServiceReference.IToDo)(this)).AddOrUpdateToDo(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UI.Client.ServiceReference.AddOrUpdateToDoResponse> UI.Client.ServiceReference.IToDo.AddOrUpdateToDoAsync(UI.Client.ServiceReference.AddOrUpdateToDoRequest request) {
+            return base.Channel.AddOrUpdateToDoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UI.Client.ServiceReference.AddOrUpdateToDoResponse> AddOrUpdateToDoAsync(UI.Client.ServiceReference.ToDoItem toDoItem) {
+            UI.Client.ServiceReference.AddOrUpdateToDoRequest inValue = new UI.Client.ServiceReference.AddOrUpdateToDoRequest();
+            inValue.Body = new UI.Client.ServiceReference.AddOrUpdateToDoRequestBody();
+            inValue.Body.toDoItem = toDoItem;
+            return ((UI.Client.ServiceReference.IToDo)(this)).AddOrUpdateToDoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UI.Client.ServiceReference.DeleteToDoResponse UI.Client.ServiceReference.IToDo.DeleteToDo(UI.Client.ServiceReference.DeleteToDoRequest request) {
+            return base.Channel.DeleteToDo(request);
+        }
+        
+        public void DeleteToDo(UI.Client.ServiceReference.ToDoItem toDoItem) {
+            UI.Client.ServiceReference.DeleteToDoRequest inValue = new UI.Client.ServiceReference.DeleteToDoRequest();
+            inValue.Body = new UI.Client.ServiceReference.DeleteToDoRequestBody();
+            inValue.Body.toDoItem = toDoItem;
+            UI.Client.ServiceReference.DeleteToDoResponse retVal = ((UI.Client.ServiceReference.IToDo)(this)).DeleteToDo(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UI.Client.ServiceReference.DeleteToDoResponse> UI.Client.ServiceReference.IToDo.DeleteToDoAsync(UI.Client.ServiceReference.DeleteToDoRequest request) {
+            return base.Channel.DeleteToDoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UI.Client.ServiceReference.DeleteToDoResponse> DeleteToDoAsync(UI.Client.ServiceReference.ToDoItem toDoItem) {
+            UI.Client.ServiceReference.DeleteToDoRequest inValue = new UI.Client.ServiceReference.DeleteToDoRequest();
+            inValue.Body = new UI.Client.ServiceReference.DeleteToDoRequestBody();
+            inValue.Body.toDoItem = toDoItem;
+            return ((UI.Client.ServiceReference.IToDo)(this)).DeleteToDoAsync(inValue);
         }
     }
 }

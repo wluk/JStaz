@@ -11,7 +11,6 @@ namespace UI.Web.App_Start
         public static void LoadDataToDB()
         {
             SeedData.SeedDataStart();
-
         }
     }
 }

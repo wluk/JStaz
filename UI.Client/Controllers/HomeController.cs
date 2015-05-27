@@ -9,11 +9,11 @@ namespace UI.Client.Controllers
 {
     public class HomeController : Controller
     {
-        private ServiceReference.ServiceClient _client;
-        public HomeController()
-        {
-            _client = new ServiceClient();
-        }
+        //private ServiceReference.ServiceClient _client;
+        //public HomeController()
+        //{
+        //    _client = new ServiceClient();
+        //}
 
         public ActionResult Index()
         {
@@ -25,9 +25,9 @@ namespace UI.Client.Controllers
 
         public ActionResult About()
         {
-            _client.Open();
-            ViewBag.Number = _client.GetAllPersons();
-            _client.Close();
+            //_client.Open();
+            //ViewBag.Number = _client.GetAllPersons();
+            //_client.Close();
 
             return View();
         }

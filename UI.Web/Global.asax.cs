@@ -18,9 +18,7 @@ namespace UI.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //wilu
-            LoadData.LoadDataToDB();
-
+            //LoadData.LoadDataToDB();
         }
     }
 }
