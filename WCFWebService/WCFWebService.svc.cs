@@ -13,6 +13,13 @@ namespace WCFWebService
 {
     public class WCFWebService : IWCFWebService
     {
+        private CRUD _crud;
+
+        public WCFWebService()
+        {
+            
+        }
+
         public string Msg()
         {
             return "Hello, was is das WCF?";
@@ -20,28 +27,10 @@ namespace WCFWebService
 
         public List<SERVICE.PersonDTO> PersonList()
         {
-            var persons = new List<PersonDTO>();
-            using (var session = NHibernateHelper.OpenSession())
-            {
-                var DBpersons = session.Query<Person>().ToList();
-                foreach (var p in DBpersons)
-                {
-                    persons.Add(new PersonDTO()
-                    {
-                        PersonID = p.PersonID,
-                        LastName = p.LastName,
-                        HireDate = p.HireDate,
-                        FirstName = p.FirstName,
-                        EnrollmentDate = p.EnrollmentDate,
-                        Discrimination = p.Discrimination,
-                        CoursesCount = p.Courses.Count(),
-                        officeAssignment = null,
-                        StudentGradesCount = p.StudentGrades.Count()
-                    });
-                }
-                session.Close();
-            }
-            return persons;
+            _crud = new CRUD();
+            SeedData.SeedDataStart();
+
+            return _crud.SelectAll();
         }
     }
 }

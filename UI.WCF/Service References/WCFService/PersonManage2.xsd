@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/MODEL.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MODEL.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49556/PersonManage.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="OfficeAssignment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InstructorID" type="xs:int" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" type="ser:duration" />
+      <xs:element minOccurs="0" name="person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OfficeAssignment" nillable="true" type="tns:OfficeAssignment" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Courses" nillable="true" type="tns:ArrayOfCourse" />
+      <xs:element minOccurs="0" name="Discrimination" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnrollmentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HireDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonID" type="xs:int" />
+      <xs:element minOccurs="0" name="StudentGrades" nillable="true" type="tns:ArrayOfStudentGrade" />
+      <xs:element minOccurs="0" name="officeAssignment" nillable="true" type="tns:OfficeAssignment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Course" nillable="true" type="tns:Course" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCourse" nillable="true" type="tns:ArrayOfCourse" />
+  <xs:complexType name="Course">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseID" type="xs:int" />
+      <xs:element minOccurs="0" name="Credits" type="xs:int" />
+      <xs:element minOccurs="0" name="DepartmentID" nillable="true" type="tns:Department" />
+      <xs:element minOccurs="0" name="Persons" nillable="true" type="tns:ArrayOfPerson" />
+      <xs:element minOccurs="0" name="StudentGrades" nillable="true" type="tns:ArrayOfStudentGrade" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="online" nillable="true" type="tns:OnlineCourse" />
+      <xs:element minOccurs="0" name="onsite" nillable="true" type="tns:OnsiteCourse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Course" nillable="true" type="tns:Course" />
+  <xs:complexType name="Department">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Administrator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Budget" type="xs:float" />
+      <xs:element minOccurs="0" name="Courses" nillable="true" type="tns:ArrayOfCourse" />
+      <xs:element minOccurs="0" name="DepartmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Department" nillable="true" type="tns:Department" />
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
+  <xs:complexType name="ArrayOfStudentGrade">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StudentGrade" nillable="true" type="tns:StudentGrade" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStudentGrade" nillable="true" type="tns:ArrayOfStudentGrade" />
+  <xs:complexType name="StudentGrade">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseID" nillable="true" type="tns:Course" />
+      <xs:element minOccurs="0" name="EnrollmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="Grade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentID" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StudentGrade" nillable="true" type="tns:StudentGrade" />
+  <xs:complexType name="OnlineCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseID" type="xs:int" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="course" nillable="true" type="tns:Course" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OnlineCourse" nillable="true" type="tns:OnlineCourse" />
+  <xs:complexType name="OnsiteCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseID" type="xs:int" />
+      <xs:element minOccurs="0" name="Days" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" type="ser:duration" />
+      <xs:element minOccurs="0" name="course" nillable="true" type="tns:Course" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OnsiteCourse" nillable="true" type="tns:OnsiteCourse" />
+</xs:schema>

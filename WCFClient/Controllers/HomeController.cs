@@ -12,11 +12,18 @@ namespace WCFClient.Controllers
         WCFWebServiceClient client = new WCFWebServiceClient();
 
         public ActionResult Index()
+        {          
+
+            return View();
+        }
+
+        public ActionResult Clik()
         {
             ViewBag.message = client.Msg();
             var persons = client.PersonList();
 
             return View();
         }
+
     }
 }

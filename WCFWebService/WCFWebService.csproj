@@ -76,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IWCFWebService.cs" />
-    <Compile Include="NHibernateHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WCFWebService.svc.cs">
       <DependentUpon>WCFWebService.svc</DependentUpon>

@@ -1,12 +1,12 @@
 ﻿using MODEL.Model;
-using SERVICE;
+using WcfService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SERVICE
+namespace WcfService
 {
     public class SeedData
     {

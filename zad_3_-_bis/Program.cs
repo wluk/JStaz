@@ -13,13 +13,13 @@ namespace zad_3___bis
     {
         static void Main(string[] args)
         {
-            InsertData();
+            //InsertData();
             //CourseInfo();
-            //PersonType();
+            PersonType();
             //DelAllPerson();
 
             //Console.WriteLine("\n\nPusc ten baton...");
-           // Console.ReadLine();
+           Console.ReadLine();
         }
 
         private static void InsertData()

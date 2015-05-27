@@ -50,8 +50,7 @@ namespace zad_3___bis
         }
 
         public static ISession OpenSession()
-        {
-            
+        {            
             return SessionFactory.OpenSession();
         }
     }

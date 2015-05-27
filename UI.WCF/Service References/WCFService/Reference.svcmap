@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="284d0680-77f4-46e0-b109-e6b4e80cf539" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49556/PersonManage.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PersonManage.wsdl" MetadataType="Wsdl" ID="f199a3f5-0abd-409f-a28d-bc67baeb52bc" SourceId="1" SourceUrl="http://localhost:49556/PersonManage.svc?wsdl" />
+    <MetadataFile FileName="PersonManage.xsd" MetadataType="Schema" ID="73def1cf-9a14-4565-8695-830f97425f6c" SourceId="1" SourceUrl="http://localhost:49556/PersonManage.svc?xsd=xsd2" />
+    <MetadataFile FileName="PersonManage1.xsd" MetadataType="Schema" ID="654bae6d-d04a-41c8-a80c-c94cfcdd9e66" SourceId="1" SourceUrl="http://localhost:49556/PersonManage.svc?xsd=xsd0" />
+    <MetadataFile FileName="PersonManage.disco" MetadataType="Disco" ID="69e11828-7428-4154-affc-5501f7800036" SourceId="1" SourceUrl="http://localhost:49556/PersonManage.svc?disco" />
+    <MetadataFile FileName="PersonManage2.xsd" MetadataType="Schema" ID="c338785e-3ba3-4196-89f6-4d2c47a42b70" SourceId="1" SourceUrl="http://localhost:49556/PersonManage.svc?xsd=xsd3" />
+    <MetadataFile FileName="PersonManage3.xsd" MetadataType="Schema" ID="ce78fdca-b90d-4d0c-9fe2-0f42f1ec0b6d" SourceId="1" SourceUrl="http://localhost:49556/PersonManage.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
