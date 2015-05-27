@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WcfService
+namespace SERVICES
 {
     public interface ICRUD<T>
     {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NHibernate.Linq;
 using NHibernate;
 using MODEL.Model;
-using WcfService;
+using SERVICES;
 
 namespace zad_3___bis
 {

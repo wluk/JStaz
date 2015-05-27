@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WcfService
+namespace SERVICES
 {
     public class NHibernateHelper
     {
@@ -37,14 +37,14 @@ namespace WcfService
                     .ConnectionString(@"Server=.; Database=NHibernate_ex_3; Trusted_Connection=True;")
                     .ShowSql()
                 )
-                    //.Mappings(m => m.FluentMappings
-                    //    .AddFromAssemblyOf<Person>())
-                    //        .BuildSessionFactory();
-                .Mappings(m => m.FluentMappings
-                    .AddFromAssemblyOf<Course>())
-                    .ExposeConfiguration(cfg => new SchemaExport(cfg)
-                        .Create(true, true))
-                        .BuildSessionFactory();
+                    .Mappings(m => m.FluentMappings
+                        .AddFromAssemblyOf<Person>())
+                            .BuildSessionFactory();
+                //.Mappings(m => m.FluentMappings
+                //    .AddFromAssemblyOf<Course>())
+                //    .ExposeConfiguration(cfg => new SchemaExport(cfg)
+                //        .Create(true, true))
+                //        .BuildSessionFactory();
             }
             catch (Exception)
             {

@@ -1,11 +1,18 @@
-﻿@{
-    ViewBag.Title = "List<int>";
-}
-<h2>@ViewBag.Title.</h2>
+﻿@model List<UI.Client.ViewModel.VMPerson>
 
-<div class="well">
-    @foreach (var item in @ViewBag.Number)
-    {
-        <b>@item</b><br />
-    }
-</div>
+<h2>Lista osób - GetAll() - SELECT * FROM Person</h2>
+<br />
+@foreach (var p in Model)
+{
+    <div class="col-md-3">
+        <div class="well well-lg">
+            <ul>
+                <b> PERSON #@p.id</b>
+                <li>Imię: @p.FirstName</li>
+                <li>Nazwisko: @p.LastName</li>
+            </ul>
+        </div>
+        <br />
+    </div>
+}
+

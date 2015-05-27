@@ -23,7 +23,6 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="ToDo.xsd" MetadataType="Schema" ID="f5a10767-72aa-4a26-9fa1-9372e2475a2f" SourceId="1" SourceUrl="http://localhost:65080/ToDo.svc?xsd=xsd0" />
-    <MetadataFile FileName="ToDo1.xsd" MetadataType="Schema" ID="6c03f838-7224-49e0-a06a-9ba868915e30" SourceId="1" SourceUrl="http://localhost:65080/ToDo.svc?xsd=xsd1" />
     <MetadataFile FileName="ToDo.disco" MetadataType="Disco" ID="c2c1bdcc-d571-45d2-9a79-2cb74b5c3aef" SourceId="1" SourceUrl="http://localhost:65080/ToDo.svc?disco" />
     <MetadataFile FileName="ToDo.wsdl" MetadataType="Wsdl" ID="281e8324-a8d5-480b-84f1-9bc900a88a23" SourceId="1" SourceUrl="http://localhost:65080/ToDo.svc?wsdl" />
   </Metadata>

@@ -4,16 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using UI.Client.ServiceReference;
+using SERVICES;
+using UI.Client.ViewModel;
 
 namespace UI.Client.Controllers
 {
     public class HomeController : Controller
     {
-        //private ServiceReference.ServiceClient _client;
-        //public HomeController()
-        //{
-        //    _client = new ServiceClient();
-        //}
+        private ServiceReference.ToDoClient _client;
+        public HomeController()
+        {
+            _client = new ToDoClient();
+        }
 
         public ActionResult Index()
         {
@@ -25,11 +27,17 @@ namespace UI.Client.Controllers
 
         public ActionResult About()
         {
-            //_client.Open();
-            //ViewBag.Number = _client.GetAllPersons();
-            //_client.Close();
+            _client.Open();
+            var persons = _client.GetToDos();
+            List<VMPerson> personListModel = new List<VMPerson>();
+            foreach (var p in persons)
+            {
+                personListModel.Add(new VMPerson() { id = p.Id, FirstName = p.FirstName, LastName = p.LastName });
+            }
+            _client.Abort();
+            _client.Close();
 
-            return View();
+            return View(personListModel);
         }
 
         public ActionResult Contact()

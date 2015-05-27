@@ -123,6 +123,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\VMPerson.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -171,9 +172,6 @@
     <None Include="Service References\ServiceReference\ToDo.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference\ToDo1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\ServiceReference\UI.Client.ServiceReference.AddOrUpdateToDoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -203,6 +201,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SERVICE\SERVICES.csproj">
+      <Project>{49723866-6d66-4f52-9cc7-2dc2c8067d39}</Project>
+      <Name>SERVICES</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
